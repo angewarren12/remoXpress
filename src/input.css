@@ -1,0 +1,674 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+  .btn-primary {
+    @apply bg-remo-green text-white hover:bg-remo-green-dark;
+  }
+  .btn-outline {
+    @apply border-2 border-remo-green text-remo-green hover:bg-remo-green hover:text-white;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  .feature-item {
+    @apply transition-all duration-300 transform;
+  }
+  .feature-hover {
+    @apply -translate-y-2 shadow-lg;
+  }
+  .app-screen-animation {
+    @apply transition-all duration-500 hover:shadow-2xl;
+  }
+}
+
+/* Animations personnalisées */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de flottement */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Animation de pulsation */
+.pulse-effect {
+  animation: pulse-effect 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-effect {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+/* Animation d'apparition avec décalage */
+.appear-delay {
+  opacity: 0;
+  animation: appear 0.8s ease-out forwards;
+}
+
+.appear-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.appear-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.appear-delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de rotation 3D */
+.rotate-3d {
+  perspective: 1000px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.rotate-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Animation de brillance */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 6s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(30deg) translateX(-100%);
+  }
+  20%, 100% {
+    transform: rotate(30deg) translateX(100%);
+  }
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Styles pour les particules */
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Assurer que les particules n'interfèrent pas avec le contenu */
+.particles-overlay {
+  position: relative;
+  z-index: 10;
+}
+
+/* Animation spéciale pour les particules au survol */
+.hero-particles-effect {
+  position: relative;
+}
+
+.hero-particles-effect::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(0, 200, 83, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.hero-particles-effect:hover::before {
+  opacity: 1;
+}
+
+/* Animation de rebond pour les éléments de la section héro */
+.hero-bounce {
+  animation: hero-bounce 4s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Effet de surbrillance pour les boutons dans la section héro */
+.hero-btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 200, 83, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Styles pour la section "En Côte d'Ivoire" */
+.problem-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #00C853, #69F0AE);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 200, 83, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.problem-card:hover::before {
+  transform: translateX(0);
+}
+
+.problem-icon {
+  transition: all 0.3s ease;
+}
+
+.problem-card:hover .problem-icon {
+  transform: scale(1.2) rotate(10deg);
+  background-color: rgba(0, 200, 83, 0.2);
+}
+
+/* Animation de compteur pour les statistiques */
+.counter-wrapper {
+  position: relative;
+}
+
+.counter-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Styles pour la section "Avantages pour Tous" */
+.advantage-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 200, 83, 0.05);
+}
+
+.advantage-card::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  transition: all 0.8s ease;
+  z-index: 2;
+}
+
+.advantage-card:hover::before {
+  top: 150%;
+  left: 150%;
+  transition: all 0.8s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 200, 83, 0.1);
+  border-color: rgba(0, 200, 83, 0.2);
+}
+
+.advantage-icon-wrapper {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.advantage-item {
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+.advantage-card:hover .advantage-item {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Animation flottante pour les icônes d'avantages */
+.advantage-icon-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Effet de pulsation pour les cercles décoratifs - VERSION AMÉLIORÉE */
+.pulse-circle {
+  animation: pulse-circle 8s ease-in-out infinite;
+  opacity: 0.3 !important; /* Augmentation de l'opacité */
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.3), rgba(105, 240, 174, 0.2)) !important;
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.2);
+}
+
+@keyframes pulse-circle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Arrière-plan de section amélioré */
+.advantage-section-bg {
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.05), rgba(255, 255, 255, 1), rgba(0, 200, 83, 0.05));
+  position: relative;
+}
+
+.advantage-section-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 20%, rgba(0, 200, 83, 0.1), transparent 70%),
+              radial-gradient(circle at 30% 80%, rgba(0, 200, 83, 0.1), transparent 70%);
+  z-index: 0;
+}
+
+/* Effet de brillance pour les cartes d'avantages - VERSION AMÉLIORÉE */
+.advantage-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.advantage-card:hover::before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s ease;
+}
+
+/* Effet de transition pour les titres */
+.section-title-animated {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.section-title-animated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00C853, transparent);
+  transition: width 0.5s ease;
+}
+
+.section-title-animated:hover::after {
+  width: 100%;
+}
+
+/* Effet de zoom sur les icônes */
+.zoom-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.2);
+}
+
+/* Animation de défilement pour les listes */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.stagger-list-item {
+  opacity: 0;
+}
+
+.stagger-list-item.animate {
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+.stagger-delay-1 { animation-delay: 0.1s; }
+.stagger-delay-2 { animation-delay: 0.2s; }
+.stagger-delay-3 { animation-delay: 0.3s; }
+.stagger-delay-4 { animation-delay: 0.4s; }
+
+/* Effet de surbrillance pour les titres de section */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00C853, #69F0AE);
+  transition: width 0.5s ease;
+}
+
+.section-title-wrapper:hover .section-title::after {
+  width: 80px;
+}
+
+/* Effet de carte 3D */
+.card-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Styles pour la page Services */
+.service-image-container {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 200, 83, 0.1);
+  transition: all 0.5s ease;
+}
+
+.service-image-container:hover {
+  box-shadow: 0 15px 30px rgba(0, 200, 83, 0.2);
+  transform: translateY(-5px);
+}
+
+.service-title {
+  position: relative;
+  display: inline-block;
+}
+
+.service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00C853;
+  transition: width 0.5s ease;
+}
+
+.service-title:hover::after {
+  width: 100%;
+}
+
+.service-icon {
+  transition: all 0.3s ease;
+}
+
+.service-feature-item:hover .service-icon {
+  transform: scale(1.2);
+  background-color: rgba(0, 200, 83, 0.2);
+}
+
+.service-feature-item {
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.service-feature-item:hover {
+  background-color: rgba(0, 200, 83, 0.05);
+  transform: translateX(5px);
+}
+
+/* Animation pour les éléments de service */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animation de pulsation pour les icônes de service */
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pulse-icon {
+  animation: pulse-icon 2s infinite;
+}
+
+/* Styles pour les images de service */
+.service-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Limite la hauteur des images */
+  object-fit: cover; /* Assure que l'image couvre bien l'espace sans déformation */
+  object-position: center; /* Centre l'image */
+}
+
+.service-image-container {
+  max-width: 500px; /* Limite la largeur maximale du conteneur */
+  margin: 0 auto; /* Centre le conteneur si nécessaire */
+  height: 300px; /* Hauteur fixe pour tous les conteneurs d'image */
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .service-image-container {
+    height: 250px; /* Hauteur réduite sur mobile */
+    max-width: 100%; /* Pleine largeur sur mobile */
+  }
+}
+
+/* Header styles */
+#header {
+  transition: all 0.3s ease;
+}
+
+#header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#header .nav-link.active {
+  position: relative;
+  font-weight: 600;
+}
+
+#header .nav-link:hover {
+  transform: translateY(-2px);
+}
+
+#header .nav-link span {
+  transition: all 0.3s ease;
+}
+
+/* Header animation for homepage */
+.home-header {
+  background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+  #mobile-menu {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+}

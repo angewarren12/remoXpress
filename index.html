@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoXpress - Dépannage à portée de main</title>
+    <meta name="description" content="RemoXpress - Service de dépannage et remorquage en Côte d'Ivoire. Assistance routière rapide et fiable à portée de main.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    
+    <!-- CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-white shadow-md" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="./assets/images/logo.png" alt="RemoXpress Logo" class="h-16">
+                </a>
+                
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-remo-green font-medium transition-colors duration-300 relative nav-link active">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="services.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#download" class="bg-remo-green hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex items-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden py-4 hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-white bg-remo-green font-medium py-2 px-4 rounded-lg">
+                        Accueil
+                    </a>
+                    <a href="services.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Services
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        À propos
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Contact
+                    </a>
+                    <a href="#download" class="bg-gray-100 text-remo-green font-bold py-2 px-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-white to-green-50 relative overflow-hidden">
+        <!-- Container de particules -->
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 hero-particles-effect">Dépannage Routier<br><span class="text-remo-green">à Portée de Main</span></h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">RemoXpress vous connecte instantanément avec des services de dépannage fiables en Côte d'Ivoire. Assistance routière rapide, transparente et sécurisée.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#download" class="btn btn-primary hero-btn-glow">
+                        <i class="fab fa-google-play mr-2"></i>Télécharger
+                    </a>
+                    <a href="#services" class="btn btn-outline hero-btn-glow">
+                        Nos services
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative" data-aos="fade-left">
+                <div class="phone-animation transition-all duration-500 ease-in-out hero-bounce">
+                    <img src="./assets/images/hero-app.png" alt="Application RemoXpress" class="mx-auto max-w-full">
+                </div>
+                <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-green-100 rounded-full opacity-20 animate-pulse-slow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problématique Section -->
+    <section id="problematique" class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-16 section-title-wrapper" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">En Côte d'Ivoire</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Un marché en attente d'une solution innovante</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg problem-card card-3d" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 problem-icon">
+                        <i class="fas fa-car-crash text-remo-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Absence de Services Organisés</h3>
+                    <p class="text-gray-600">Les conducteurs en panne n'ont pas accès à des services de dépannage organisés et fiables.</p>
+                    <div class="mt-4 w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-remo-green to-green-300 w-0 problem-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg problem-card card-3d" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 problem-icon">
+                        <i class="fas fa-road text-remo-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vaste Zone Géographique</h3>
+                    <p class="text-gray-600">Une vaste zone géographique avec des conditions routières difficiles complique l'accès aux services d'assistance.</p>
+                    <div class="mt-4 w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-remo-green to-green-300 w-0 problem-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg problem-card card-3d" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 problem-icon">
+                        <i class="fas fa-user-clock text-remo-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conducteurs en Détresse</h3>
+                    <p class="text-gray-600">Des milliers de conducteurs se retrouvent bloqués et sans assistance rapide en cas de panne.</p>
+                    <div class="mt-4 w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-remo-green to-green-300 w-0 problem-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistiques Section -->
+    <section class="py-16 bg-remo-green text-white">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100" class="counter-wrapper">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">
+                        <span class="counter" data-target="2000000">0</span>+
+                    </div>
+                    <p class="text-xl">Véhicules enregistrés en Côte d'Ivoire</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200" class="counter-wrapper">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">
+                        <span class="counter" data-target="300000">0</span>+
+                    </div>
+                    <p class="text-xl">Pannes estimées par an</p>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="300" class="counter-wrapper">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">
+                        <span class="counter" data-target="30000000">0</span>$+
+                    </div>
+                    <p class="text-xl">Taille du marché pour les services de remorquage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Solution Section -->
+    <section id="services" class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Découvrez RemoXpress</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">La première plateforme de service de remorquage en Côte d'Ivoire</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-20">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div class="relative mx-auto max-w-sm">
+                        <div class="absolute inset-0 bg-gradient-to-r from-remo-green-light to-remo-green opacity-20 rounded-3xl transform rotate-3 scale-105"></div>
+                        <img src="./assets/images/app-screen.png" alt="Application RemoXpress" class="relative z-10 mx-auto max-w-full rounded-3xl shadow-xl app-screen-animation float shine-effect">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-remo-green rounded-full opacity-20 pulse-effect"></div>
+                        <div class="absolute -top-4 -left-4 w-16 h-16 bg-remo-green-light rounded-full opacity-20 pulse-effect"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6 text-remo-green">Fonctionnalités Clés</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start feature-item appear-delay appear-delay-1">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-location-dot text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Assistance Fiable à Portée de Main</h4>
+                                <p class="text-gray-600">Localisez et contactez rapidement le service de dépannage le plus proche en quelques clics.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start feature-item appear-delay appear-delay-2">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-star text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Transparence et Confiance</h4>
+                                <p class="text-gray-600">Système d'évaluation des chauffeurs pour garantir un service de qualité et construire la confiance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start feature-item appear-delay appear-delay-3">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-route text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Suivi en Temps Réel</h4>
+                                <p class="text-gray-600">Suivez l'arrivée de votre dépanneur en temps réel pour une tranquillité d'esprit totale.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start feature-item appear-delay appear-delay-3">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-credit-card text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Paiement Sécurisé</h4>
+                                <p class="text-gray-600">Options de paiement sécurisées et pratiques pour une expérience sans tracas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#download" class="btn btn-primary mr-4 transform transition-transform hover:scale-105">Télécharger</a>
+                        <a href="#contact" class="btn btn-outline transform transition-transform hover:scale-105">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages Section -->
+    <section class="section bg-gray-50 relative overflow-hidden advantage-section-bg">
+        <!-- Cercles décoratifs en arrière-plan -->
+        <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full pulse-circle"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full pulse-circle"></div>
+        <div class="absolute top-1/2 right-1/3 w-48 h-48 rounded-full pulse-circle" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-32 h-32 rounded-full pulse-circle" style="animation-delay: 4s;"></div>
+        
+        <div class="container relative z-10">
+            <div class="text-center mb-16 section-title-wrapper" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title section-title-animated">Avantages pour Tous</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">RemoXpress crée de la valeur pour l'ensemble de l'écosystème</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mx-auto mt-6 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Avantages pour les conducteurs -->
+                <div class="bg-white p-6 rounded-xl shadow-lg advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 advantage-icon-wrapper advantage-icon-float">
+                        <i class="fas fa-car text-remo-green text-2xl zoom-on-hover"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pour les Conducteurs</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-1">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Service de dépannage rapide et fiable</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-2">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Réduction du temps d'attente et du stress</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-3">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Tarification transparente</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-4">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Sécurité et tranquillité d'esprit</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Avantages pour les chauffeurs de dépanneuse -->
+                <div class="bg-white p-6 rounded-xl shadow-lg advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 advantage-icon-wrapper advantage-icon-float">
+                        <i class="fas fa-truck-pickup text-remo-green text-2xl zoom-on-hover"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pour les Dépanneurs</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-1">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Source de revenus supplémentaire</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-2">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Accès à une clientèle plus large</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-3">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Allocation efficace des missions</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-4">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Horaires flexibles et contrôle des zones</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Avantages pour les compagnies d'assurance -->
+                <div class="bg-white p-6 rounded-xl shadow-lg advantage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 advantage-icon-wrapper advantage-icon-float">
+                        <i class="fas fa-shield-alt text-remo-green text-2xl zoom-on-hover"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pour les Assurances</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-1">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Service complémentaire pour les clients</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-2">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Amélioration de la satisfaction client</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-3">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Réduction des coûts de gestion des sinistres</span>
+                        </li>
+                        <li class="flex items-center advantage-item stagger-list-item stagger-delay-4">
+                            <i class="fas fa-check text-remo-green mr-2"></i>
+                            <span>Données précieuses sur les incidents routiers</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Téléchargement Section -->
+    <section id="download" class="section bg-gradient-to-br from-remo-green to-remo-green-dark text-white">
+        <div class="container">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Téléchargez RemoXpress Dès Maintenant</h2>
+                    <p class="text-xl mb-8">Ne restez plus jamais bloqué sur la route. Téléchargez l'application et profitez d'une assistance routière à portée de main.</p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.remoxpress" target="_blank" class="flex items-center justify-center bg-white text-remo-green px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
+                            <i class="fab fa-google-play text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="text-lg font-semibold">Google Play</div>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center justify-center bg-white text-remo-green px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Bientôt sur</div>
+                                <div class="text-lg font-semibold">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="./assets/images/download-app.png" alt="Téléchargez RemoXpress" class="mx-auto max-w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="./assets/images/logo-white.png" alt="RemoXpress Logo" class="h-12 mb-4">
+                    <p class="text-gray-400 mb-4">Service de dépannage et remorquage rapide et fiable en Côte d'Ivoire.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contactez-nous</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Abidjan, Côte d'Ivoire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>+225 XX XX XX XX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>contact@remoxpress.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Téléchargez l'App</h4>
+                    <p class="text-gray-400 mb-4">Disponible sur Google Play et bientôt sur App Store.</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.remoxpress" target="_blank" class="flex items-center bg-white text-gray-900 px-4 py-2 rounded-lg">
+                            <i class="fab fa-google-play text-xl mr-2"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="#" class="flex items-center bg-white text-gray-900 px-4 py-2 rounded-lg opacity-50 cursor-not-allowed">
+                            <i class="fab fa-apple text-xl mr-2"></i>
+                            <span>Bientôt disponible</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 RemoXpress. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-remo-green text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-remo-green-dark">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./js/config/particles-config.js"></script>
+    <script src="./js/particles-init.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+</body>
+</html>

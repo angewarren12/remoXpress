@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - RemoXpress</title>
+    <meta name="description" content="Découvrez les services de dépannage et remorquage proposés par RemoXpress en Côte d'Ivoire.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    
+    <!-- CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-white shadow-md" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="./assets/images/logo.png" alt="RemoXpress Logo" class="h-16">
+                </a>
+                
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="services.html" class="text-remo-green font-medium transition-colors duration-300 relative nav-link active">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#download" class="bg-remo-green hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex items-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden py-4 hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Accueil
+                    </a>
+                    <a href="services.html" class="text-white bg-remo-green font-medium py-2 px-4 rounded-lg">
+                        Services
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        À propos
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Contact
+                    </a>
+                    <a href="#download" class="bg-gray-100 text-remo-green font-bold py-2 px-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-white to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Nos <span class="text-remo-green">Services</span></h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">Découvrez comment RemoXpress révolutionne l'assistance routière en Côte d'Ivoire avec une gamme complète de services de dépannage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Principaux -->
+    <section class="section bg-white">
+        <div class="container">
+            <!-- Service de Remorquage -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <h2 class="text-3xl font-bold mb-6 service-title">Service de Remorquage</h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mb-6 rounded-full"></div>
+                    </div>
+                    <p class="text-lg text-gray-700 mb-6">Notre service de remorquage est disponible 24h/24 et 7j/7 pour vous aider en cas de panne ou d'accident. Nos chauffeurs professionnels arrivent rapidement sur place pour remorquer votre véhicule en toute sécurité.</p>
+                    
+                    <ul class="space-y-4 service-features">
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-truck-pickup text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Remorquage Rapide</h4>
+                                <p class="text-gray-600">Assistance rapide pour tous types de véhicules, des voitures particulières aux utilitaires légers.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-map-marked-alt text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Couverture Étendue</h4>
+                                <p class="text-gray-600">Service disponible dans toutes les grandes villes de Côte d'Ivoire et sur les principaux axes routiers.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-shield-alt text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Sécurité Garantie</h4>
+                                <p class="text-gray-600">Équipement moderne et chauffeurs formés pour assurer la sécurité de votre véhicule pendant le transport.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" class="service-image-container relative overflow-hidden rounded-xl">
+                    <div class="service-image-wrapper transform transition-transform duration-700 hover:scale-105">
+                        <img src="./assets/images/service-repair.png" alt="Service de remorquage" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Service disponible 24/7</h3>
+                            <p class="text-sm">Intervention rapide partout en Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dépannage sur Place -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <h2 class="text-3xl font-bold mb-6 service-title">Dépannage sur Place</h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mb-6 rounded-full"></div>
+                    </div>
+                    <p class="text-lg text-gray-700 mb-6">Parfois, un simple dépannage suffit. Nos techniciens sont équipés pour résoudre de nombreux problèmes directement sur place, vous évitant ainsi un remorquage inutile.</p>
+                    
+                    <ul class="space-y-4 service-features">
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-battery-full text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Batterie Déchargée</h4>
+                                <p class="text-gray-600">Service de démarrage rapide en cas de batterie déchargée ou défaillante.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-gas-pump text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Panne de Carburant</h4>
+                                <p class="text-gray-600">Livraison de carburant d'urgence si vous tombez en panne d'essence.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-tools text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Réparations Mineures</h4>
+                                <p class="text-gray-600">Intervention pour des réparations simples permettant de reprendre la route rapidement.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" class="service-image-container relative overflow-hidden rounded-xl">
+                    <div class="service-image-wrapper transform transition-transform duration-700 hover:scale-105">
+                        <img src="./assets/images/service-towing.png" alt="Dépannage sur place" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Techniciens qualifiés</h3>
+                            <p class="text-sm">Solutions rapides pour reprendre la route</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Assistance Routière -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <h2 class="text-3xl font-bold mb-6 service-title">Assistance Routière</h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mb-6 rounded-full"></div>
+                    </div>
+                    <p class="text-lg text-gray-700 mb-6">RemoXpress vous offre une assistance routière complète pour vous aider dans toutes les situations d'urgence sur la route.</p>
+                    
+                    <ul class="space-y-4 service-features">
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-car-crash text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Changement de Pneu</h4>
+                                <p class="text-gray-600">Remplacement rapide de pneu crevé avec votre roue de secours ou transport vers un garage.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-key text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Ouverture de Véhicule</h4>
+                                <p class="text-gray-600">Assistance en cas de clés enfermées dans votre véhicule ou de serrure défectueuse.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start service-feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="mr-4 mt-1 bg-green-100 p-2 rounded-full service-icon">
+                                <i class="fas fa-phone-alt text-remo-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Conseil Technique</h4>
+                                <p class="text-gray-600">Assistance téléphonique par nos experts pour vous guider en cas de problème mineur.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" class="service-image-container relative overflow-hidden rounded-xl">
+                    <div class="service-image-wrapper transform transition-transform duration-700 hover:scale-105">
+                        <img src="./assets/images/service-assistance.png" alt="Assistance routière" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end">
+                        <div class="p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Assistance complète</h3>
+                            <p class="text-sm">Solutions pour toutes les situations d'urgence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche -->
+    <section class="section bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Comment Ça Marche</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Obtenez de l'aide en quelques étapes simples</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-remo-green rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3">Téléchargez l'App</h3>
+                    <p class="text-gray-600">Téléchargez gratuitement l'application RemoXpress sur Google Play.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-remo-green rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3">Créez un Compte</h3>
+                    <p class="text-gray-600">Inscrivez-vous en quelques secondes avec votre numéro de téléphone.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-remo-green rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3">Demandez de l'Aide</h3>
+                    <p class="text-gray-600">En cas de panne, ouvrez l'app et demandez le service dont vous avez besoin.</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-remo-green rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">4</div>
+                    <h3 class="text-xl font-bold mb-3">Suivez en Temps Réel</h3>
+                    <p class="text-gray-600">Suivez l'arrivée de votre dépanneur et payez facilement via l'application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Téléchargement Section -->
+    <section id="download" class="section bg-gradient-to-br from-remo-green to-remo-green-dark text-white">
+        <div class="container">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Téléchargez RemoXpress Dès Maintenant</h2>
+                    <p class="text-xl mb-8">Ne restez plus jamais bloqué sur la route. Téléchargez l'application et profitez d'une assistance routière à portée de main.</p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.remoxpress" target="_blank" class="flex items-center justify-center bg-white text-remo-green px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
+                            <i class="fab fa-google-play text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="text-lg font-semibold">Google Play</div>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center justify-center bg-white text-remo-green px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Bientôt sur</div>
+                                <div class="text-lg font-semibold">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="./assets/images/download-app.png" alt="Téléchargez RemoXpress" class="mx-auto max-w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="./assets/images/logo-white.png" alt="RemoXpress Logo" class="h-12 mb-4">
+                    <p class="text-gray-400 mb-4">Service de dépannage et remorquage rapide et fiable en Côte d'Ivoire.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contactez-nous</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Abidjan, Côte d'Ivoire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>+225 XX XX XX XX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>contact@remoxpress.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Téléchargez l'App</h4>
+                    <p class="text-gray-400 mb-4">Disponible sur Google Play et bientôt sur App Store.</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://play.google.com/store/apps/details?id=com.remoxpress" target="_blank" class="flex items-center bg-white text-gray-900 px-4 py-2 rounded-lg">
+                            <i class="fab fa-google-play text-xl mr-2"></i>
+                            <span>Google Play</span>
+                        </a>
+                        <a href="#" class="flex items-center bg-white text-gray-900 px-4 py-2 rounded-lg opacity-50 cursor-not-allowed">
+                            <i class="fab fa-apple text-xl mr-2"></i>
+                            <span>Bientôt disponible</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 RemoXpress. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-remo-green text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-remo-green-dark">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+</body>
+</html>

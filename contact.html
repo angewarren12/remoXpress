@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RemoXpress</title>
+    <meta name="description" content="Contactez RemoXpress pour toute question concernant nos services de dépannage et remorquage en Côte d'Ivoire.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    
+    <!-- CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-white shadow-md" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="./assets/images/logo.png" alt="RemoXpress Logo" class="h-16">
+                </a>
+                
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="services.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 relative nav-link">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                    <a href="contact.html" class="text-remo-green font-medium transition-colors duration-300 relative nav-link active">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-remo-green transition-all duration-300"></span>
+                    </a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#download" class="bg-remo-green hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex items-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden py-4 hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Accueil
+                    </a>
+                    <a href="services.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        Services
+                    </a>
+                    <a href="about.html" class="text-gray-700 hover:text-remo-green font-medium transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">
+                        À propos
+                    </a>
+                    <a href="contact.html" class="text-white bg-remo-green font-medium py-2 px-4 rounded-lg">
+                        Contact
+                    </a>
+                    <a href="#download" class="bg-gray-100 text-remo-green font-bold py-2 px-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-download mr-2"></i> Télécharger
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-white to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Contactez <span class="text-remo-green">Nous</span></h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">Vous avez une question ou besoin d'assistance ? Notre équipe est à votre disposition pour vous aider.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Formulaire de contact -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Envoyez-nous un message</h2>
+                    <div class="w-20 h-1 bg-remo-green mb-8 rounded-full"></div>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2 font-medium">Nom complet</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-remo-green focus:border-transparent transition" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2 font-medium">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-remo-green focus:border-transparent transition" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2 font-medium">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-remo-green focus:border-transparent transition" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                            <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-remo-green focus:border-transparent transition" required></textarea>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <button type="submit" class="bg-remo-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i> Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Informations de contact -->
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Nos coordonnées</h2>
+                    <div class="w-20 h-1 bg-remo-green mb-8 rounded-full"></div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full text-remo-green text-xl mr-4 flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Adresse</h3>
+                                <p class="text-gray-700">Abidjan, Côte d'Ivoire</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full text-remo-green text-xl mr-4 flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Téléphone</h3>
+                                <p class="text-gray-700 mb-1">+225 XX XX XX XX</p>
+                                <p class="text-gray-700">+225 XX XX XX XX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full text-remo-green text-xl mr-4 flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Email</h3>
+                                <p class="text-gray-700 mb-1">contact@remoxpress.com</p>
+                                <p class="text-gray-700">support@remoxpress.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full text-remo-green text-xl mr-4 flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Heures d'ouverture</h3>
+                                <p class="text-gray-700 mb-1">Service disponible 24h/24, 7j/7</p>
+                                <p class="text-gray-700">Bureau: Lundi - Vendredi, 8h - 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Réseaux sociaux -->
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold mb-4">Suivez-nous</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-green-100 hover:bg-remo-green text-remo-green hover:text-white p-3 rounded-full transition-colors duration-300 w-10 h-10 flex items-center justify-center">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-remo-green text-remo-green hover:text-white p-3 rounded-full transition-colors duration-300 w-10 h-10 flex items-center justify-center">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-remo-green text-remo-green hover:text-white p-3 rounded-full transition-colors duration-300 w-10 h-10 flex items-center justify-center">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-remo-green text-remo-green hover:text-white p-3 rounded-full transition-colors duration-300 w-10 h-10 flex items-center justify-center">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Notre localisation</h2>
+                <div class="w-20 h-1 bg-remo-green mx-auto mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Retrouvez-nous à notre siège social à Abidjan, Côte d'Ivoire.</p>
+            </div>
+            
+            <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in">
+                <!-- Remplacez l'URL par l'iframe de Google Maps de votre choix -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254936.9394494253!2d-4.1012863749999995!3d5.348957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1647882256136!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-6 relative inline-block service-title">Questions fréquentes</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-remo-green to-green-300 mx-auto mb-6 rounded-full"></div>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Trouvez rapidement des réponses à vos questions les plus courantes.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6" data-aos="fade-up">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-3 flex justify-between items-center cursor-pointer faq-question">
+                            <span>Comment puis-je télécharger l'application RemoXpress ?</span>
+                            <i class="fas fa-chevron-down text-remo-green transition-transform duration-300"></i>
+                        </h3>
+                        <div class="faq-answer hidden">
+                            <p class="text-gray-700">L'application RemoXpress est disponible gratuitement sur Google Play Store. Recherchez simplement "RemoXpress" et cliquez sur "Installer" pour télécharger l'application sur votre appareil Android.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-3 flex justify-between items-center cursor-pointer faq-question">
+                            <span>Quelles sont les zones couvertes par RemoXpress ?</span>
+                            <i class="fas fa-chevron-down text-remo-green transition-transform duration-300"></i>
+                        </h3>
+                        <div class="faq-answer hidden">
+                            <p class="text-gray-700">RemoXpress opère actuellement dans les principales villes de Côte d'Ivoire, notamment Abidjan et ses environs. Nous étendons progressivement notre couverture à d'autres régions du pays.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-3 flex justify-between items-center cursor-pointer faq-question">
+                            <span>Combien coûtent les services de RemoXpress ?</span>
+                            <i class="fas fa-chevron-down text-remo-green transition-transform duration-300"></i>
+                        </h3>
+                        <div class="faq-answer hidden">
+                            <p class="text-gray-700">Les tarifs varient en fonction du service demandé, de la distance et du type de véhicule. Vous pouvez obtenir une estimation de prix directement dans l'application avant de confirmer votre demande d'assistance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-3 flex justify-between items-center cursor-pointer faq-question">
+                            <span>Comment puis-je devenir chauffeur partenaire ?</span>
+                            <i class="fas fa-chevron-down text-remo-green transition-transform duration-300"></i>
+                        </h3>
+                        <div class="faq-answer hidden">
+                            <p class="text-gray-700">Pour devenir chauffeur partenaire, contactez-nous via le formulaire de contact ou envoyez un email à partenaires@remoxpress.com. Nous vous fournirons toutes les informations nécessaires sur le processus d'inscription et les conditions requises.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-3 flex justify-between items-center cursor-pointer faq-question">
+                            <span>Quels modes de paiement sont acceptés ?</span>
+                            <i class="fas fa-chevron-down text-remo-green transition-transform duration-300"></i>
+                        </h3>
+                        <div class="faq-answer hidden">
+                            <p class="text-gray-700">RemoXpress accepte plusieurs modes de paiement, notamment le paiement en espèces, les cartes bancaires et les solutions de paiement mobile comme Orange Money et MTN Mobile Money.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Download -->
+    <section id="download" class="py-20 bg-gradient-to-r from-remo-green to-green-600 text-white">
+        <div class="container">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Téléchargez l'application RemoXpress dès maintenant</h2>
+                    <p class="text-lg mb-8 text-white/90">Obtenez une assistance routière rapide et fiable à portée de main. Notre application est disponible gratuitement sur Google Play.</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-black text-white px-6 py-3 rounded-lg flex items-center hover:bg-gray-900 transition-colors">
+                            <i class="fab fa-google-play text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="text-sm font-semibold">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center" data-aos="fade-left">
+                    <img src="./assets/images/app-mockup.png" alt="RemoXpress App" class="max-w-xs md:max-w-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="./assets/images/logo-white.png" alt="RemoXpress Logo" class="h-12 mb-4">
+                    <p class="text-gray-500 mb-6">RemoXpress révolutionne l'assistance routière en Côte d'Ivoire avec une application mobile simple et efficace.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-500 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors">Remorquage</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors">Dépannage sur place</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors">Assistance routière</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors">Conseil technique</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact</h3>
+                    <ul class="space-y-3 text-gray-500">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-remo-green"></i>
+                            <span>Abidjan, Côte d'Ivoire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-remo-green"></i>
+                            <span>+225 XX XX XX XX</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-remo-green"></i>
+                            <span>contact@remoxpress.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 RemoXpress. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+    
+    <!-- Script pour les FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle answer visibility
+                    answer.classList.toggle('hidden');
+                    
+                    // Toggle icon rotation
+                    if (answer.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
